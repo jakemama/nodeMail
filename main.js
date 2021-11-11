@@ -27,13 +27,13 @@ let EamilAuth = {
 let EmailFrom = '"Honey" <ma18510784001@163.com>';
 
 //接收者邮箱地
-let EmailTo =["jake_ma@yeah.net", "ma18510784001@163.com"] ;
+let EmailTo =["jake_ma@yeah.net", "18810511819@163.com"] ;
 //邮件主题
 let EmailSubject = "小非非和小蚂蚁的温馨日常";
 
 //每日发送时间
-let EmailHour = 7;
-let EmialMinminute= 10;
+let EmailHour = 6;
+let EmialMinminute= 50;
 
 // 爬取数据的url
 const OneUrl = "http://wufazhuce.com/";
