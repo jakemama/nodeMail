@@ -4,7 +4,8 @@ const nodemailer = require("nodemailer"); //发送邮件的node插件
 const ejs = require("ejs"); //ejs模版引擎
 const fs = require("fs"); //文件读写
 const path = require("path"); //路径配置
-const schedule = require("node-schedule"); //定时器任务库
+// const schedule = require("node-schedule"); //定时器任务库
+const schedule = require("node-schedule-tz");
 //配置项
 
 //纪念日
@@ -32,8 +33,8 @@ let EmailTo =["jake_ma@yeah.net", ""] ;
 let EmailSubject = "小非非和小蚂蚁的温馨日常";
 
 //每日发送时间
-let EmailHour = 9;
-let EmialMinminute= 50;
+// let EmailHour = 9;
+// let EmialMinminute= 50;
 
 // 爬取数据的url
 const OneUrl = "http://wufazhuce.com/";
@@ -228,12 +229,16 @@ function getAllDataAndSendMail(){
     })
 }
 
-let rule = new schedule.RecurrenceRule();
-rule.dayOfWeek = [0, new schedule.Range(1, 6)];
-rule.hour = EmailHour;
-rule.minute = EmialMinminute;
+// let rule = new schedule.RecurrenceRule();
+// rule.dayOfWeek = [0, new schedule.Range(1, 6)];
+// rule.hour = EmailHour;
+// rule.minute = EmialMinminute;
 console.log('NodeMail: 开始等待目标时刻...')
-let j = schedule.scheduleJob(rule, function() {
+// let j = schedule.scheduleJob(rule, function() {
+//   console.log("执行任务");
+//   getAllDataAndSendMail();
+// });
+let j = schedule.scheduleJob('name',"44 16 * * *",'Asia/Shanghai', function () {
   console.log("执行任务");
   getAllDataAndSendMail();
 });
