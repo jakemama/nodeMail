@@ -258,7 +258,7 @@ console.log('NodeMail: 开始等待目标时刻...')
 //   console.log("执行任务");
 //   getAllDataAndSendMail();
 // });
-let j = schedule.scheduleJob('name',"44 16 * * *",'Asia/Shanghai', function () {
+let j = schedule.scheduleJob('name',"0 7 * * *",'Asia/Shanghai', function () {
   console.log("执行任务");
   getAllDataAndSendMail();
 });
