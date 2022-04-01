@@ -28,7 +28,7 @@ let EamilAuth = {
 let EmailFrom = '"Honey" <ma18510784001@163.com>';
 
 //接收者邮箱地
-let EmailTo =["jake_ma@yeah.net", "18810511819@163.com"] ;
+let EmailTo =["jake_ma@yeah.net", ""];
 //邮件主题
 let EmailSubject = "小非非和小蚂蚁的温馨日常";
 
