@@ -28,7 +28,7 @@ let EamilAuth = {
 let EmailFrom = '"Honey" <ma18510784001@163.com>';
 
 //接收者邮箱地
-let EmailTo =["jake_ma@yeah.net", ""] ;
+let EmailTo =["jake_ma@yeah.net", "18810511819@163.com"] ;
 //邮件主题
 let EmailSubject = "小非非和小蚂蚁的温馨日常";
 
@@ -50,9 +50,7 @@ function getJakeData(){
           }
           let $ = cheerio.load(res.text);
           let max = $("ol li").length
-          let random = Math.ceil(Math.random() * max) 
-          console.log(random);
-          console.log($("ol li").eq(random).text());
+          let random = Math.ceil(Math.random() * max)
           let todayOneData = {
             text: $("ol li").eq(random).text()
           };
@@ -251,16 +249,4 @@ function getAllDataAndSendMail(){
     })
 }
 
-// let rule = new schedule.RecurrenceRule();
-// rule.dayOfWeek = [0, new schedule.Range(1, 6)];
-// rule.hour = EmailHour;
-// rule.minute = EmialMinminute;
-console.log('NodeMail: 开始等待目标时刻...')
-// let j = schedule.scheduleJob(rule, function() {
-//   console.log("执行任务");
-//   getAllDataAndSendMail();
-// });
-let j = schedule.scheduleJob('name',"44 16 * * *",'Asia/Shanghai', function () {
-  console.log("执行任务");
-  getAllDataAndSendMail();
-});
+getAllDataAndSendMail();
