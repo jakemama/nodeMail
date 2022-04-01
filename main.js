@@ -49,12 +49,10 @@ function getJakeData(){
               reject(err);
           }
           let $ = cheerio.load(res.text);
-          let max = $("ol li").length
-          let random = Math.ceil(Math.random() * max) 
-          console.log(random);
-          console.log($("ol li").eq(random).text());
+          let max = $(".post-inner-html>ol>li").length
+          let random = Math.ceil(Math.random() * max)
           let todayOneData = {
-            text: $("ol li").eq(random).text()
+            text: $(".post-inner-html>ol>li").eq(random).text()
           };
           resolve(todayOneData)
         });
